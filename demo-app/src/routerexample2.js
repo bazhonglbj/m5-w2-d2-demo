@@ -17,7 +17,7 @@ function About(){
 }
 
 function Topics() {
-  let match = useMatch('/users/:id');
+  let match = useMatch();
 
   return (
     <div>

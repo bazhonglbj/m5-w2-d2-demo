@@ -6,24 +6,24 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App() {
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+      <p>This is home</p>
+    </div>
+  );
+}
 
-  function Home() {
-    return (
-      <div>
-        <h2>Home</h2>
-        <p>This is home</p>
-      </div>
-    );
-  }
-  
-  function About() {
-    return <h2>About</h2>;
-  }
-  
-  function Users() {
-    return <h2>Users</h2>;
-  }
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
+
+export default function App() {
 
   return (
     <Router>
@@ -42,14 +42,11 @@ export default function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/about">
-            <About />
+          <Route path="/about" element={<About />}>
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/users" element={<Users />}>
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/" element={<Home />}>
           </Route>
         </Routes>
       </div>
